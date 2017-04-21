@@ -1,7 +1,7 @@
 <% if model.errors.any? %>
   <div class="alert alert-warning">
     <ul>
-      <% model.errors.messages.each do |task| %>
+      <% model.errors.tasks.each do |task| %>
         <li><%= task %></li>
       <% end %>
     </ul>
