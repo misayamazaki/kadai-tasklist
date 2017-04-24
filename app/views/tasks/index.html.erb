@@ -23,5 +23,9 @@
     <%= paginate @tasks %>
   </div>
 <% end %>
-
-<%= link_to '新規タスクの投稿', new_task_path, class: "btn btn-primary" %>
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= link_to task.id, task %> : <%= task.content %></li>
+    <li><%= link_to '新規タスクの投稿', new_tasks_path, class: "btn btn-primary" %></li>
+  <% end %>
+</ul>
