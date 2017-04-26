@@ -1,10 +1,13 @@
 <h1>id: <%= @task.id %> のタスク編集ページ</h1>
 
-<%= render 'form', task: @task %>
 <%= form_for(@task) do |f| %>
+  <div class='form-group'>
+  
   <%= f.label :content, 'タスク' %>
-  <%= f.text_field :content %>
-  <%= f.submit '投稿' %>
+  <%= f.text_field :content ,class: 'form-control'%>
+  </div>
+
+  <%= f.submit '投稿', class: "btn btn-primary" %>
+  <%= link_to '一覧に戻る',  @task, class: "btn btn-success" %>
 <% end %>
 
-<%= link_to '一覧に戻る', tasks_path %>
